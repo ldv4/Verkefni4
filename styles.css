@@ -1,0 +1,285 @@
+/* Setjum inn „reset“ sem fjarlægir margin og padding af öllu */
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Reiknum stærð á öllum boxum sem border-box */
+  html {
+    box-sizing: border-box;
+  }
+  /* og látum erfast á allt */
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+  /* hjálpar class sem felur sjónrænt en skjálesarar lesa */
+  .sr-only:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  /* Breytur sem skal nota */
+
+:root {
+    /* Grunn bilið okkar er 1rem == 16px */
+    --font-base-body-px: 16px;
+    --spacing: 1rem;
+
+    /* Hámarksbreidd á efni */
+    --max-width: 900px;
+
+    /* Border breiddir*/
+    --border-small: 1px;
+    --border-large: 8px;
+    --border-radius: 6px;
+
+    /*Litir*/
+    --color-primary: #ffe7ae;
+    --color-secondary: #fff1cf;
+    --color-dark: #2f0505;
+    --color-light: #fff9ee;
+    
+  
+    /* Letur stillingar */
+    --font-base-size: var(--spacing);
+    --font-family-base: 'Noto Sans Display', Helvetica, Arial, sans-serif;
+    --font-family-heading: 'Lora', Georgia, serif;
+  }
+  
+  @font-face {
+    font-family: 'Noto Sans Display';
+    font-style: normal;
+    font-display: swap;
+    src: url(./fonts/Noto_Sans_Display/NotoSansDisplay-VariableFont_wdth\,wght.ttf) format('woff');
+  }
+  
+  @font-face {
+    font-family: 'Lora';
+    font-style: normal;
+    font-display: swap;
+    src: url(./fonts/Lora/Lora-VariableFont_wght.ttf) format('woff');
+  }
+  
+
+  /*** Almennt ***/
+  
+  html,
+  input,
+  select,
+  button {
+    font-size: var(--font-base-body-px);
+    font-family: var(--font-family-base);
+  }
+  
+  a {
+    color: inherit;
+  }
+  
+  h2,
+  h3,
+  section {
+    margin-bottom: var(--spacing);
+    font-family: var(--font-family-heading);
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+  /*** Haus ***/
+  
+  .header {
+    font-family: 'Lora';
+    padding: var(--spacing);
+  
+    background-color: var(--color-dark);
+    color: var(--color-secondary);
+    border-bottom: var(--border-large) solid var(--color-primary);
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+  }
+  
+  /*** Valmynd ***/
+  
+  .nav {
+    display: flex;
+    justify-content: space-evenly;
+    padding: var(--spacing);
+  
+    background-color: var(--color-light);
+    color: var(--color-header);
+  }
+  
+  .nav .ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    
+  }
+
+  .header .ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: var(--spacing)
+  }
+  
+  .nav .ul li {
+    flex-direction: row;
+    justify-content: space-around;
+    margin-right: var(--spacing);
+  }
+  
+  /*** Meginmál ***/
+  
+  main {
+    margin: 0 auto;
+    padding-left: var(--spacing);
+    padding-right: var(--spacing);
+    max-width: 900px;
+  }
+
+  .wrapper{
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  /*** Fótur ***/
+  
+  .footer {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: var(--spacing);
+    padding: var(--spacing);
+    border-top: var(--border-large) solid var(--color-primary);
+  
+    background-color: var(--color-dark);
+    color: var(--color-primary);
+
+    font-family: 'Lora';
+
+  }
+  
+  .footer .section {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  .footer .section .ul {
+    list-style: none;
+    text-align: center;
+  }
+  
+  /*** Box! ***/
+  
+  .boxes {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--spacing);
+
+    margin-bottom: 2rem;
+    margin-top: var(--spacing);
+    padding: var(--spacing);
+    border-bottom: var(--border-small) solid var(--color-secondary);
+  }
+  
+  .boxes .box {
+    display: flex;
+    flex-direction: column;
+    object-fit: contain;
+    object-position: top;
+  
+    margin-bottom: var(--spacing);
+    width: 48%;
+  
+    background-color: var(--color-secondary);
+    border-radius: var(--border-radius);
+    padding: var();
+  }
+  
+  .boxes .box a {
+    display: flex;
+    margin-top: var(--spacing);
+    font-weight: bold;
+  }
+
+  .boxes .box .buttons{
+    display: flex;
+  }
+
+  /*** Opnunartími ***/
+  
+  dt {
+    font-weight: bold;
+  }
+  
+  dd {
+    margin-bottom: var(--spacing);
+  }
+  
+  /*** Matseðill ***/
+  
+  table {
+    margin-bottom: var(--spacing);
+    border-spacing: 0;
+  }
+  
+  table th,
+  table td {
+    padding: 0.5rem;
+  }
+  
+  table tbody tr:nth-child(2n + 1) {
+    background-color: var(--color-primary);
+  }
+  
+  /*** Pöntunarform ***/
+  
+  fieldset {
+    margin-bottom: var(--spacing);
+    border: var(--border-small) solid var(--color-primary);
+    padding: var(--spacing);
+  }
+  
+  fieldset legend {
+    font-weight: bold;
+  }
+  
+  fieldset div {
+    margin-bottom: var(--spacing);
+  }
+  
+  fieldset div label {
+    display: flex;
+  }
+  
+  fieldset input,
+  fieldset select,
+  fieldset textarea {
+    padding: 0.5rem;
+  }
+  
+  fieldset input[type='checkbox'] {
+    display: flex;
+    margin-right: 0.5rem;
+  }
+  
+  form button {
+    padding: 0.25rem;
+    border-radius: 3px;
+    width: 100%;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  }
